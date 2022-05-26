@@ -29,10 +29,10 @@ The URI for this vocabulary is:
 
 The URI for the vocabulary's meta-schema is:
 
-[`https://handrews.github.io/jsonpoiner-jsonschema-vocabulary/schema`](https://handrews.github.io/jsonpoiner-jsonschema-vocabulary/schema)
+[`https://handrews.github.io/jsonpointer-jsonschema-vocabulary/schema`](https://handrews.github.io/jsonpointer-jsonschema-vocabulary/schema)
 
 Regrettably, due to limitations of GitHub pages, the meta-schema will not have
-the proper Content-Type setting.  For proper content type, [add ".json" to the URI](https://handrews.github.io/jsonpoiner-jsonschema-vocabulary/schema.json).
+the proper Content-Type setting.  For proper content type, [add ".json" to the URI](https://handrews.github.io/jsonpointer-jsonschema-vocabulary/schema.json).
 
 ## References
 
