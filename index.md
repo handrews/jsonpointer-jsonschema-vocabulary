@@ -1,6 +1,6 @@
 ---
 title: A JSON Schema for JSON Pointer and Relative JSON Pointer
-permalink: /
+permalink: /jsonpointer-jsonschema-vocabulary/
 ---
 
 # A JSON Schema Vocabulary for JSON Pointer and Relative JSON Pointer
