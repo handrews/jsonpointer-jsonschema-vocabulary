@@ -25,7 +25,7 @@ in order to use the annotations.
 
 The URI for this vocabulary is:
 
-[`https://handrews.github.io/jsonpointer-jsonschema-vocabulary)`](https://handrews.github.io/jsonpointer-jsonschema-vocabulary)
+[`https://handrews.github.io/jsonpointer-jsonschema-vocabulary`](https://handrews.github.io/jsonpointer-jsonschema-vocabulary)
 
 The URI for the vocabulary's meta-schema is:
 
