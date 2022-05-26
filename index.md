@@ -1,3 +1,8 @@
+---
+title: A JSON Schema for JSON Pointer and Relative JSON Pointer
+permalink: /
+---
+
 # A JSON Schema Vocabulary for JSON Pointer and Relative JSON Pointer
 
 _[**WARNING:** This project is in development and not yet suitable for
