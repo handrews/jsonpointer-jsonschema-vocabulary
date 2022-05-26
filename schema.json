@@ -1,0 +1,33 @@
+{
+    "$id": "https://handrews.github.io/jsonpointer-jsonschema-vocabulary/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$vocabulary": {
+        "https://handrews.github.io/jsonpointer-jsonschema-vocabulary": true
+    },
+    "$dynamicAnchor": "meta",
+
+    "title": "Keywords for JSON Pointer and Relative JSON Pointer",
+    "properties": {
+        "jsonPointer": {
+            "type": "string",
+            "enum": ["absolute", "relative", "any"]
+        ],
+        "relJsonPointerUpMin": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "relJsonPointerUpMax": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "relJsonPointerOverMin": {
+            "type": "integer"
+        },
+        "relJsonPointerOverMax": {
+            "type": "integer"
+        },
+        "relJsonPointerGetNameOrIndex": {
+            "type": "boolean"
+        }
+    }
+}
