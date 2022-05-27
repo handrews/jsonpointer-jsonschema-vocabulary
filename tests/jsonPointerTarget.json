@@ -1,0 +1,51 @@
+[
+    {
+        "description": "jsonPointerTarget",
+        "schema": {
+            "$schema": "https://handrews.github.io/jsonpointer-jsonschema-vocabulary/2020-12-dialect",
+            "$id": "https://example.com/test",
+            "jsonPointerTarget": "configuration"
+        },
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": {"foo": "bar"},
+                "valid": true,
+                "outputUnits": [
+                    {
+                        "instanceLocation": "",
+                        "keywordLocation": "/jsonPointerTarget",
+                        "absoluteKeywordLocation": "https://example.com/teset#/jsonPointerTarget",
+                        "annotation": "configuration"
+                    }
+                ]
+            },
+            {
+                "description": "non-json pointer string value",
+                "data": "whatever",
+                "valid": true,
+                "outputUnits": [
+                    {
+                        "instanceLocation": "",
+                        "keywordLocation": "/jsonPointerTarget",
+                        "absoluteKeywordLocation": "https://example.com/teset#/jsonPointerTarget",
+                        "annotation": "configuration"
+                    }
+                ]
+            },
+            {
+                "description": "json pointer string value",
+                "data": "/foo/1/bar",
+                "valid": true,
+                "outputUnits": [
+                    {
+                        "instanceLocation": "",
+                        "keywordLocation": "/jsonPointerTarget",
+                        "absoluteKeywordLocation": "https://example.com/teset#/jsonPointerTarget",
+                        "annotation": "configuration"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,217 @@
+[
+    {
+        "description": "relJsonPointerMinUp",
+        "schema": {
+            "$schema": "https://handrews.github.io/jsonpointer-jsonschema-vocabulary/2020-12-dialect",
+            "$id": "https://example.com/test",
+            "relJsonPointerMinUp": 1
+        },
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "/foo/bar",
+                "valid": true
+            },
+            {
+                "description": "up count equal to min",
+                "data": "1#",
+                "valid": true
+            },
+            {
+                "description": "up count greater than min",
+                "data": "20/foo",
+                "valid": true
+            },
+            {
+                "description": "up count less than min",
+                "data": "0/bar",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "relJsonPointerMaxUp",
+        "schema": {"relJsonPointerMaxUp": 5},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "whatever",
+                "valid": true
+            },
+            {
+                "description": "up count equal to max",
+                "data": "5/0",
+                "valid": true
+            },
+            {
+                "description": "up count less than max",
+                "data": "2",
+                "valid": true
+            },
+            {
+                "description": "up count greater than max",
+                "data": "6",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "relJsonPointerMinOver",
+        "schema": {"relJsonPointerMinOver": -5},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": 3.14,
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "/foo/bar",
+                "valid": true
+            },
+            {
+                "description": "index adjustment equal to min",
+                "data": "0-5#",
+                "valid": true
+            },
+            {
+                "description": "index adjustment greater than min",
+                "data": "20+2/foo",
+                "valid": true
+            },
+            {
+                "description": "omitted valid 0 adjustment",
+                "data": "4/0",
+                "valid": true
+            },
+            {
+                "description": "index adjustment less than min",
+                "data": "0-6/bar",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "relJsonPointerMaxOver",
+        "schema": {"relJsonPointerMaxOver": 0},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": true,
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "/blah/-",
+                "valid": true
+            },
+            {
+                "description": "index adjustment equal to max",
+                "data": "0+0/0",
+                "valid": true
+            },
+            {
+                "description": "index adjustment less than max",
+                "data": "2-10/bar",
+                "valid": true
+            },
+            {
+                "description": "omitted valid 0 adjustment",
+                "data": "4#",
+                "valid": true
+            },
+            {
+                "description": "index adjustment greater than max",
+                "data": "6+1",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "relJsonPointerGetNameOrIndex true",
+        "schema": {"relJsonPointerGetNameOrIndex": true},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": [1, 2, 3],
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "/0",
+                "valid": true
+            },
+            {
+                "description": "up only",
+                "data": "1#",
+                "valid": true
+            },
+            {
+                "description": "up and over",
+                "data": "0-5#",
+                "valid": true
+            },
+            {
+                "description": "not getting name or index, with pointer",
+                "data": "4+1/foo/bar#",
+                "valid": false
+            },
+            {
+                "description": "not getting name or index, no pointer",
+                "data": "10",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "relJsonPointerGetNameOrIndex false",
+        "schema": {"relJsonPointerGetNameOrIndex": false},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": [1, 2, 3],
+                "valid": true
+            },
+            {
+                "description": "non-Relative JSON Pointer string",
+                "data": "thing",
+                "valid": true
+            },
+            {
+                "description": "up only",
+                "data": "0",
+                "valid": true
+            },
+            {
+                "description": "up and over",
+                "data": "4-5",
+                "valid": true
+            },
+            {
+                "description": "with pointer",
+                "data": "1+1/foo/bar/-",
+                "valid": true
+            },
+            {
+                "description": "getting name or index, with pointer",
+                "data": "0+1/foo/bar#",
+                "valid": true
+            },
+            {
+                "description": "getting name or index, no pointer",
+                "data": "10-20#",
+                "valid": false
+            }
+        ]
+    }
+]

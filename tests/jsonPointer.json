@@ -1,0 +1,204 @@
+[
+    {
+        "description": "jsonPointer validation: absolute",
+        "schema": {
+            "$schema": "https://handrews.github.io/jsonpointer-jsonschema-vocabulary/2020-12-dialect",
+            "$id": "https://example.com/test",
+            "jsonPointer": "absolute"
+        },
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "empty pointer",
+                "data": "",
+                "valid": true
+            },
+            {
+                "description": "pointer to root property named ''",
+                "data": "/",
+                "valid": true
+            },
+            {
+                "description": "typical absolute pointer",
+                "data": "/foo/42/bar",
+                "valid": true
+            },
+            {
+                "description": "includes value that would need to be URL-encoded in a fragment",
+                "data": "/foo?:[]bar/-",
+                "valid": true
+            },
+            {
+                "description": "an unescaped '~'",
+                "data": "/foo~bar",
+                "valid": false
+            },
+            {
+                "description": "not a JSON Pointer at all",
+                "data": "blah",
+                "valid": false
+            },
+            {
+                "description": "a Relative JSON Pointer",
+                "data": "0/foo/bar",
+                "valid": false
+            },
+            {
+                "description": "a Relative JSON Pointer without a JSON Pointer part",
+                "data": "1-1#",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "jsonPointer validation: relative",
+        "schema": {"jsonPointer": "relative"},
+        "tests": [
+            {
+                "description": "a non-string",
+                "data": false,
+                "valid": true
+            },
+            {
+                "description": "just an up reference",
+                "data": "4",
+                "valid": true
+            },
+            {
+                "description": "up and over",
+                "data": "0-1",
+                "valid": true
+            },
+            {
+                "description": "name or index of",
+                "data": "0#",
+                "valid": true
+            },
+            {
+                "description": "name or index of after over",
+                "data": "3+2#",
+                "valid": true
+            },
+            {
+                "description": "with pointer",
+                "data": "0/foo/0/bar",
+                "valid": true
+            },
+            {
+                "description": "with characters that would be URL encoded if in a fragment",
+                "data": "1/foo[]bar",
+                "valid": true
+            },
+            {
+                "description": "an unescaped '~'",
+                "data": "40/foo~bar",
+                "valid": false
+            },
+            {
+                "description": "a negative up count",
+                "data": "-1/foo/2",
+                "valid": false
+            },
+            {
+                "description": "an empty absolute pointer",
+                "data": "",
+                "valid": false
+            },
+            {
+                "description": "a non-empty absolute pointer",
+                "data": "/foo/bar",
+                "valid": false
+            },
+            {
+                "description": "a plain string",
+                "data": "string",
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "jsonPointer validation: any",
+        "schema": {"jsonPointer": "any"},
+        "tests": [
+            {
+                "description": "non-string value",
+                "data": 1,
+                "valid": true
+            },
+            {
+                "description": "empty pointer",
+                "data": "",
+                "valid": true
+            },
+            {
+                "description": "pointer to root property named ''",
+                "data": "/",
+                "valid": true
+            },
+            {
+                "description": "typical absolute pointer",
+                "data": "/foo/42/bar",
+                "valid": true
+            },
+            {
+                "description": "includes value that would need to be URL-encoded in a fragment",
+                "data": "/foo?:[]bar/-",
+                "valid": true
+            },
+            {
+                "description": "just an up reference",
+                "data": "4",
+                "valid": true
+            },
+            {
+                "description": "up and over",
+                "data": "0-1",
+                "valid": true
+            },
+            {
+                "description": "name or index of",
+                "data": "0#",
+                "valid": true
+            },
+            {
+                "description": "name or index of after over",
+                "data": "3+2#",
+                "valid": true
+            },
+            {
+                "description": "with pointer",
+                "data": "0/foo/0/bar",
+                "valid": true
+            },
+            {
+                "description": "with characters that would be URL encoded if in a fragment",
+                "data": "1/foo[]bar",
+                "valid": true
+            },
+            {
+                "description": "with characters that would be URL encoded if in a fragment",
+                "data": "1/foo[]bar",
+                "valid": true
+            },
+            {
+                "description": "an unescaped '~'",
+                "data": "40/foo~bar",
+                "valid": false
+            },
+            {
+                "description": "a negative up count",
+                "data": "-1/foo/2",
+                "valid": false
+            },
+            {
+                "description": "a plain string",
+                "data": "string",
+                "valid": false
+            }
+        ]
+    }
+]
