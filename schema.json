@@ -11,7 +11,7 @@
         "jsonPointer": {
             "type": "string",
             "enum": ["absolute", "relative", "any"]
-        ],
+        },
         "relJsonPointerUpMin": {
             "type": "integer",
             "minimum": 0
