@@ -7,8 +7,10 @@ title: A JSON Schema for JSON Pointer and Relative JSON Pointer
 _[**WARNING:** This project is in development and not yet suitable for
 anything but demonstrating the uses of vocabularies.  It is expected to
 be finalized, along with a test suite (in this repository) and 
-reference implementation (in a separate repository), by July 2022.
-It is not intended for standardization, although all are welcome
+reference implementation (in a separate repository), by no later than
+October 2022._
+
+_It is not intended for standardization, although all are welcome
 to use it, including as the basis for standardization work.]_
 
 ## Introduction
