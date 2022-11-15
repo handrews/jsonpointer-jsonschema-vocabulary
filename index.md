@@ -5,12 +5,9 @@ title: A JSON Schema for JSON Pointer and Relative JSON Pointer
 # A JSON Schema Vocabulary for JSON Pointer and Relative JSON Pointer
 
 _[**WARNING:** This project is in development and not yet suitable for
-anything but demonstrating the uses of vocabularies.  It is expected to
-be finalized, along with a test suite (in this repository) and 
-reference implementation (in a separate repository), by no later than
-October 2022._
+anything but demonstrating the uses of vocabularies._
 
-_It is not intended for standardization, although all are welcome
+_It is not necessarily intended for standardization, although all are welcome
 to use it, including as the basis for standardization work.]_
 
 ## Introduction
